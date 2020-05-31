@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	
     <groupId>com.restapi.oracle</groupId>
-    <artifactId>SpringBootRestApiOracle</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>SpringBootRestApiOracleJBOSS</artifactId>
+    <packaging>war</packaging>
     <version>1.0</version>
 
     <parent>
@@ -24,12 +24,35 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		 <dependency>
+     		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-jdbc</artifactId>
+ 		</dependency>		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+      			<exclusion>
+         			<groupId>org.springframework.boot</groupId>
+         			<artifactId>spring-boot-starter-tomcat</artifactId>
+      			</exclusion>      			
+				<exclusion>
+				   <groupId>ch.qos.logback</groupId>
+				   <artifactId>logback-classic</artifactId>
+				</exclusion>
+   			</exclusions>
 		</dependency>
 
+
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>4.0.0</version>
+		    <scope>provided</scope>
+		</dependency>
 		
+		
+
 
 		<dependency>
 			<groupId>com.oracle</groupId>
@@ -39,7 +62,18 @@
 			<systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>
 		</dependency>
 		
-		
+		<!-- Hibernate -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>5.4.1.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>6.0.14.Final</version>
+		</dependency>
+
 		 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -55,6 +89,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>SpringBootRestApiOracleJBOSS</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

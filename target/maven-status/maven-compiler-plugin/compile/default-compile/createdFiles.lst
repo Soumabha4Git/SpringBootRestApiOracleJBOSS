@@ -1,0 +1,6 @@
+com\restapi\oracle\crud\example\service\CourseService.class
+com\restapi\oracle\crud\example\controller\CourseController.class
+com\restapi\oracle\crud\example\repository\CourseRepository.class
+com\restapi\oracle\crud\example\ServletInitializer.class
+com\restapi\oracle\crud\example\SpringBootRestApiOracleApplication.class
+com\restapi\oracle\crud\example\entity\Course.class
